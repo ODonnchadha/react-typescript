@@ -1,0 +1,697 @@
+:root {
+  --primary: #04b1b8;
+  --info: #1b59ed;
+  --accent: #fdab08;
+  --dark: #181827;
+  --less-dark: #242439;
+  --light: #f4f4f7;
+  --less-light: #ababc9;
+  --danger: #f72f2f;
+  --button-danger: #ee7d7d;
+  --card-border-radius: 12px;
+  --card-padding: 1.5rem;
+  --card-footer-padding: 1rem 1.5rem;
+}
+
+body,
+html {
+  font-family: "Roboto", sans-serif;
+  color: var(--dark);
+  background: linear-gradient(
+          0deg,
+          rgba(250, 250, 250, 0.5),
+          rgba(250, 250, 250, 0.5)
+  ),
+  #fff;
+  padding-bottom: 1rem;
+}
+
+.theme-light:before,
+.theme-dark:before {
+  content: "";
+  position: fixed;
+  z-index: 0;
+  left: 0;
+  top: 0;
+  width: 100%;
+  height: 100%;
+}
+
+.theme-light:before {
+  background: linear-gradient(
+          0deg,
+          rgba(250, 250, 250, 0.5),
+          rgba(250, 250, 250, 0.5)
+  ),
+  #fff;
+}
+.theme-dark::before {
+  background: #ccc;
+}
+
+a {
+  color: var(--primary);
+  text-decoration: none;
+}
+
+a:hover,
+a:focus {
+  color: var(--primary);
+}
+
+.btn-danger {
+  background-color: var(--button-danger);
+  border-color: var(--button-danger);
+}
+
+.bg-main-gradient {
+  background: linear-gradient(145deg, #ffe598, #ffffff);
+}
+
+.form-check-input:checked {
+  background-color: var(--primary);
+  border-color: var(--primary);
+}
+
+.form-check-input[type="checkbox"] {
+  border-radius: 0.25em;
+}
+
+.form-check-input {
+  width: 1.3rem;
+  height: 1.3rem;
+  margin-top: 0.1em;
+  margin-right: 5px;
+  vertical-align: top;
+}
+
+/* by adding 'spinner-bottom' class as a wrapper will change the spinner position to bottom */
+.spinner-bottom .spinner-grow,
+.spinner-bottom .spinner-border {
+  --bs-spinner-width: 1rem;
+  --bs-spinner-height: 1rem;
+  --bs-spinner-border-width: 0.18em;
+  position: absolute;
+  top: 24px;
+  left: 2px;
+}
+
+.spinner-grow,
+.spinner-border {
+  --bs-spinner-width: 1.5rem;
+  --bs-spinner-height: 1.5rem;
+  --bs-spinner-border-width: 0.18em;
+  position: absolute;
+  top: 0px;
+  left: 35px;
+}
+
+.spinner-height {
+  height: 2rem;
+  position: absolute !important;
+  right: 22%;
+  top: 13px;
+}
+
+.btn-accent {
+  background: var(--primary);
+  border-radius: var(--bs-btn-border-radius) !important;
+  color: var(--light);
+  font-size: 15px;
+  letter-spacing: 0.3px;
+  text-transform: uppercase;
+  font-weight: 600;
+  text-shadow: inherit;
+}
+
+.hero {
+  background-color: var(--dark);
+  color: var(--light);
+  position: relative;
+  z-index: 1;
+}
+
+.hero .logo {
+  display: flex;
+  align-items: center;
+  gap: 15px;
+}
+
+.hero .logo h2 {
+  font-size: 17px;
+  text-transform: uppercase;
+  margin: 0;
+  letter-spacing: 1px;
+  color: var(--less-light);
+}
+
+.hero .date-meta h5 {
+  margin-bottom: 3px;
+  color: var(--light);
+  letter-spacing: 0.3px;
+  font-size: 19px;
+}
+
+.hero .date-meta h6 {
+  margin: 0;
+  font-size: 15px;
+  letter-spacing: 0.4px;
+  color: var(--less-light);
+}
+
+.content-wrapper {
+  margin-top: 1rem;
+  position: relative;
+  z-index: 1;
+}
+
+header {
+  background-color: var(--less-dark);
+
+  /* Uncomment below code when the header need to be sticky onScrollDown */
+  /* position: sticky;
+  top: 0;
+  z-index: 9; */
+  box-shadow: 0px 12px 15px 0px rgb(114 116 118 / 57%);
+  margin-bottom: 13px;
+  position: relative;
+  z-index: 1;
+}
+
+header ul {
+  justify-content: center;
+}
+
+header ul li:last-child {
+  margin-left: auto;
+}
+
+header ul li button {
+  color: #b2b2c6 !important;
+  text-transform: uppercase;
+  font-weight: 400 !important;
+  letter-spacing: 0.5px;
+  font-size: 0.85rem !important;
+  border: 1px solid #3e3e5c !important;
+  line-height: 1.3;
+}
+
+header ul li button:hover,
+header ul li button:focus {
+  background-color: #3e3e5c !important;
+  color: var(--light) !important;
+  border-width: 1px !important;
+}
+
+.btn-toolbar {
+  align-items: center;
+  justify-content: center;
+  position: relative;
+  z-index: 1;
+
+  /* Uncomment below code when the toolbar need to be sticky onScroll */
+  /* position: sticky;
+  top: 80px;
+  z-index: 9; */
+}
+
+.btn-toolbar .toolbar-trigger {
+  display: flex;
+  align-items: center;
+  background: linear-gradient(145deg, #ffe598, #ffffff);
+  padding: 5px 10px;
+  border-radius: 8px;
+  padding: 7px 9px;
+  border-radius: 8px;
+  gap: 1rem;
+}
+
+.btn-toolbar .toolbar-search input {
+  border: 0;
+}
+
+@media screen and (max-width: 768px) {
+  .btn-toolbar {
+    /* top: 71px; */
+    top: 0px;
+  }
+  .btn-toolbar .toolbar-trigger {
+    gap: 1rem;
+    flex-wrap: wrap;
+    justify-content: center;
+  }
+  .btn-toolbar .toolbar-search {
+    width: 100%;
+  }
+}
+
+@media screen and (max-width: 550px) {
+  .btn-toolbar {
+    margin-top: 0px;
+  }
+  .btn-toolbar .toolbar-trigger {
+    border-radius: 0px;
+  }
+}
+
+/* BASE CARD STYLES - APPLIED TO BOTH THEMES */
+.card {
+  transition: 250ms ease all;
+  box-shadow: 10px 40px 50px rgb(207 211 224 / 42%);
+  border-radius: var(--card-border-radius) !important;
+  overflow: hidden; /* Ensures child elements respect border radius */
+  border: 1px solid rgba(0, 0, 0, 0.05);
+}
+
+.card:hover {
+  box-shadow: 10px 40px 50px rgb(173 179 198 / 42%);
+  transform: translateY(-3px);
+}
+
+.card-body {
+  min-height: 215px;
+  padding: var(--card-padding);
+}
+
+.speaker-list .card-body {
+  min-height: auto;
+}
+
+.about .card-body {
+  min-height: initial;
+}
+
+.card-body .card-text {
+  color: var(--dark);
+  opacity: 0.7;
+  line-height: 1.5;
+}
+
+.card-footer {
+  background-color: rgba(255, 255, 255, 0.5);
+  border-top: 1px solid rgba(0, 0, 0, 0.05);
+  padding: var(--card-footer-padding);
+}
+
+.card-footer small strong {
+  text-transform: uppercase;
+  font-size: 12px;
+  letter-spacing: 0.4px;
+  color: var(--less-dark);
+}
+
+.card h4.card-title a {
+  color: var(--less-darkdark);
+  opacity: 0.9;
+  transition: 250ms ease all;
+}
+
+.card:hover h4.card-title a {
+  color: var(--primary);
+}
+
+/* IMAGE STYLES FOR BOTH THEMES */
+.col-4 img {
+  border-top-left-radius: var(--card-border-radius);
+  border-bottom-left-radius: var(--card-border-radius);
+  height: 100%;
+  width: 100%;
+  object-fit: cover;
+}
+
+.speaker-image {
+  height: 100%;
+  width: 100%;
+  object-fit: cover;
+}
+
+.speaker-action {
+  flex-wrap: wrap;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 1rem;
+}
+
+.speaker-action .favoriteToggleWrapper {
+  font-size: 22px;
+  margin-bottom: 1rem; /* Consistent spacing */
+}
+
+/* Spinner positioning for favorite toggle */
+.favorite-toggle-spinner {
+  position: absolute;
+  left: 38px;
+  top: 25%;
+  width: 1rem;
+  height: 1rem;
+}
+
+.speaker-action .modifyWrapper > button {
+  margin-right: 5px;
+  font-size: 12px;
+  font-weight: 600;
+  text-transform: uppercase;
+  letter-spacing: 0.4px;
+}
+
+.speaker-action .modifyWrapper > button:last-child {
+  margin-right: 0px;
+}
+
+/* Heart button styles - CRITICAL FOR ICON DISPLAY */
+.heartdarkbutton,
+.heartredbutton {
+  display: inline-block;
+  font-family: "Font Awesome 5 Free";
+  font-weight: 900;
+  font-size: inherit;
+  text-rendering: auto;
+  -webkit-font-smoothing: antialiased;
+  border: none;
+  padding: 2px 2px;
+  line-height: 1;
+  position: relative;
+  opacity: 0.8;
+  background: transparent;
+  cursor: pointer;
+  width: 32px;
+  height: 32px;
+  border-radius: 50%;
+  transition: all 0.2s ease;
+}
+
+.heartdarkbutton::before,
+.heartredbutton::before {
+  content: "\f004";
+}
+
+.heartdarkbutton::before {
+  color: var(--dark);
+}
+
+.heartredbutton::before {
+  color: var(--danger);
+}
+
+.heartdarkbutton:hover {
+  opacity: 1;
+  background-color: rgba(0, 0, 0, 0.05);
+}
+
+.heartredbutton:hover {
+  opacity: 1;
+  background-color: rgba(247, 47, 47, 0.1);
+}
+
+/* Disabled state for heart buttons */
+.heartdarkbutton:disabled,
+.heartredbutton:disabled {
+  cursor: not-allowed;
+  opacity: 0.5;
+}
+
+/* Spinner positioning fix for heart buttons */
+.heartdarkbutton .spinner-border,
+.heartredbutton .spinner-border {
+  position: static; /* Override absolute positioning */
+  width: 1rem;
+  height: 1rem;
+  border-width: 0.15em;
+  margin: 0;
+}
+
+.heartdarkbutton .spinner-border {
+  border-color: var(--dark);
+  border-right-color: transparent;
+}
+
+.heartredbutton .spinner-border {
+  border-color: var(--danger);
+  border-right-color: transparent;
+}
+
+.modal-header .modal-title {
+  color: var(--dark);
+  text-transform: uppercase;
+  font-weight: 900;
+  letter-spacing: 0.6px;
+}
+
+.themeToggleCheckbox {
+  opacity: 0;
+  position: absolute;
+}
+
+.themeToggleCheckbox-label {
+  background-color: var(--dark);
+  width: 50px;
+  height: 26px;
+  border-radius: 50px;
+  position: relative;
+  padding: 5px;
+  cursor: pointer;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.fa-moon {
+  color: #f1c40f;
+}
+
+.fa-sun {
+  color: var(--accent);
+}
+
+.themeToggleCheckbox-label .ball {
+  background-color: #fff;
+  width: 22px;
+  height: 22px;
+  position: absolute;
+  left: 2px;
+  top: 2px;
+  border-radius: 50%;
+  transition: transform 0.2s linear;
+}
+
+.themeToggleCheckbox:checked + .themeToggleCheckbox-label .ball {
+  transform: translateX(24px);
+}
+
+.background-text-highlight {
+  background: var(--accent);
+}
+
+.blue-box-background {
+  background-image: url("data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAFAAAABQAQMAAAC032DuAAAAAXNSR0IArs4c6QAAAANQTFRFdsvgfwLFxQAAABBJREFUGBljGAWjYBTQDQAAA3AAATXTgHYAAAAASUVORK5CYII=");
+  height: 80px;
+  width: 80px;
+}
+
+.flex-grow-04 {
+  flex-grow: 0.4;
+}
+
+@media screen and (max-width: 768px) {
+  .flex-grow-04 {
+    flex-grow: 1;
+  }
+}
+
+/* LIGHT THEME SPECIFIC STYLES */
+.theme-light .card {
+  background-color: #ffffff;
+  box-shadow: 8px 20px 30px rgba(207, 211, 224, 0.3);
+}
+
+.theme-light .card:hover {
+  box-shadow: 10px 30px 40px rgba(173, 179, 198, 0.3);
+}
+
+.theme-light .card-body .card-title {
+  color: var(--dark);
+  font-weight: 700;
+  margin-bottom: 0.75rem;
+}
+
+.theme-light .card-body .card-text {
+  color: var(--less-dark);
+  opacity: 0.85;
+}
+
+.theme-light .card-footer {
+  background-color: rgba(244, 244, 247, 0.5);
+}
+
+.theme-light .card-footer small {
+  color: var(--less-dark);
+}
+
+.theme-light .card-footer small strong {
+  color: var(--primary);
+}
+
+.theme-light .heartdarkbutton {
+  opacity: 0.6;
+}
+
+.theme-light .heartredbutton {
+  opacity: 0.9;
+}
+
+/* DARK THEME SPECIFIC STYLES */
+.theme-dark .card {
+  background-color: var(--less-dark);
+  box-shadow: 8px 20px 30px rgba(0, 0, 0, 0.3);
+  border-color: rgba(255, 255, 255, 0.05);
+}
+
+.theme-dark .card:hover {
+  box-shadow: 10px 30px 40px rgba(0, 0, 0, 0.4);
+}
+
+.theme-dark .card-body .card-title {
+  color: var(--light);
+  font-weight: 700;
+  margin-bottom: 0.75rem;
+}
+
+.theme-dark .card-body .card-text {
+  color: var(--less-light);
+  opacity: 0.9;
+}
+
+.theme-dark .card-footer {
+  background-color: rgba(24, 24, 39, 0.6);
+  border-top-color: rgba(255, 255, 255, 0.05);
+}
+
+.theme-dark .card-footer small {
+  color: var(--less-light);
+}
+
+.theme-dark .card-footer small strong {
+  color: var(--accent);
+}
+
+.theme-dark .heartdarkbutton::before {
+  color: var(--light);
+}
+
+.theme-dark .heartdarkbutton:hover {
+  background-color: rgba(255, 255, 255, 0.1);
+}
+
+/* Placeholder (Skeleton) Loading Styles */
+.speaker-image-placeholder {
+  width: 200px;
+  height: 200px;
+  border-radius: var(--card-border-radius);
+  background: linear-gradient(
+          90deg,
+          #f0f0f0 25%,
+          #e2e2e2 37%,
+          #f0f0f0 63%
+  );
+  background-size: 800px 104px;
+  animation: placeholderShimmer 1.4s ease infinite;
+}
+
+.placeholder-rectangle {
+  width: 100%;
+  height: 1rem;
+  margin-bottom: 0.5rem;
+  background: linear-gradient(
+          90deg,
+          #f0f0f0 25%,
+          #e2e2e2 37%,
+          #f0f0f0 63%
+  );
+  background-size: 800px 104px;
+  animation: placeholderShimmer 1.4s ease infinite;
+  border-radius: 4px;
+}
+
+/* Keyframes for the shimmer effect */
+@keyframes placeholderShimmer {
+  0% {
+    background-position: -468px 0;
+  }
+  100% {
+    background-position: 468px 0;
+  }
+}
+
+
+
+/* Fix for speaker image aspect ratio in narrow viewports */
+@media screen and (max-width: 767px) {
+  /* Ensure image column is 45% of the card width */
+  .card .col-4 {
+    flex: 0 0 45% !important; /* Force width of 45% */
+    width: 45% !important;
+    min-width: 45% !important;
+  }
+
+  /* Ensure content column takes the remaining space */
+  .card .col-8 {
+    flex: 0 0 55% !important;
+    width: 55% !important;
+    max-width: 55% !important;
+  }
+
+  /* Restructure the card layout */
+  .card .row.g-0 {
+    padding-bottom: 60px; /* Make room for footer */
+  }
+
+  /* Footer positioning */
+  .card {
+    position: relative;
+  }
+
+  /* Position footer at bottom of card without transparency */
+  .card .card-footer {
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    width: 100%;
+    background-color: #ffffff !important; /* Solid background, no transparency */
+    opacity: 1 !important;
+  }
+
+  /* Override any theme-specific transparency */
+  .theme-light .card-footer,
+  .theme-dark .card-footer {
+    background-color: #ffffff !important;
+    opacity: 1 !important;
+  }
+
+  /* Ensure dark theme has appropriate background */
+  .theme-dark .card-footer {
+    background-color: var(--less-dark) !important;
+  }
+}
+
+/* Fix for centering cards in wide screen mode */
+@media screen and (min-width: 1200px) {
+  /* Force Bootstrap to center the cards */
+  .col-xl-6 {
+    margin: 0 auto !important;
+    float: none !important;
+  }
+
+  /* Ensure the grid container uses standard grid */
+  .row.justify-content-center {
+    display: block !important;
+    text-align: center !important;
+  }
+
+  /* Center the card within its container */
+  .col-xl-6.col-md-12 .card {
+    margin: 0 auto !important;
+    max-width: 800px !important;
+  }
+}
+
