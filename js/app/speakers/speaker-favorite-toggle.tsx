@@ -1,7 +1,7 @@
 "use client";
 import { useReducer, useTransition } from "react";
 import { speakerFavoriteToggleAction } from "@/app/speakers/speaker-favorite-toggle-action";
-import { Speaker } from "../types/speaker";
+import { Speaker, speakerSchema } from "../types/speaker";
 
 type State = {
   speaker: Speaker,
@@ -37,7 +37,7 @@ function speakerReducer(state : State, action : Action) {
         ...state,
         error: null,
       };
-    // Not needed with TypeScript.
+    // Not needed, now, with the TypeScript conversion.
     default:
       return state;
   }
@@ -47,6 +47,7 @@ type SpeakerFavoriteToggleProps = {
   speakerRec : Speaker
 }
 
+// From this React client component we are calling a React server function.
 export default function SpeakerFavoriteToggle({ speakerRec }: SpeakerFavoriteToggleProps) {
   const initialState = { speaker: speakerRec, error: null };
   const [state, dispatch] = useReducer(speakerReducer, initialState);
@@ -61,10 +62,12 @@ export default function SpeakerFavoriteToggle({ speakerRec }: SpeakerFavoriteTog
 
     startTransition(async () => {
       try {
-        await speakerFavoriteToggleAction({
+        const updatedSpeaker = {
           ...speaker,
-          favorite: !oldFavorite,
-        });
+          favorite: !oldFavorite
+        };
+        const validatedSpreaker = speakerSchema.parse(updatedSpeaker);
+        await speakerFavoriteToggleAction(validatedSpreaker);
       } catch (err) {
         dispatch({ type: "TOGGLE_FAVORITE_REVERT", payload: oldFavorite });
         let errorMessage = "Error toggling favorite.";

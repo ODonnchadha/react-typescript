@@ -115,6 +115,33 @@
         - In this ap we do have a good case for including useReducer:
             - Optimistic API. On success, the UI does not need to update.
                 - Assumption: COmpletes successfully.
-
+    - useRef: Returns `.current`
+        ```javascript
+            const myCount = useRef(value);
+            const myCount = useRef<number>(value);
+        ```
+        - Allows for direct access to Browser DOM nodes.
+            - Update component data: Allows for updating local component data without causing a rerender.
+            - Direct DOM access: Used to perform direct updates to the DOM not typically supported by React.
+        - NOTE: TypeScript with useRef ensures invalid types cause TypeScript errors.
+            - Ther shape of returned data does not change over time.
+    - Think incremental migrations.
 
 - IMPLEMENTING TYPE SAFETY AT RUNTIME FOR REACT SERVER COMPONENTS AND FUNCTIONS:
+    - Type safety in React code is about more than static type checking.
+        - Ensure run-time data is also correct.
+        - TypeScript is all about enforcing rules on our JavaScript code.
+        - It is a transpiler that converts TypeScript to JavaScript.
+        - Smart editors can enforce TypeScript.
+        - Data from a REST server? e.g.: `{ id: "serial101" }`
+            - Invalid data nbeeds runtime type checking.
+    - Zod runtime type checking.
+        - Zod uses schemas. Mirrors TypeScript types. Verified runtime data.
+        ```javascript
+            npm install zod
+        ```
+    - NOTE: Good practice to validate data in the server.
+        - Then validate data in the client.
+        - The zod schema is the same whether running on the node server or the browqser.
+    - Server Action is often used as an informal manner in which ro refer to Server FUnctions.
+    - NOTE: TypeScript is a first-class citizen in the React ecosystem.
